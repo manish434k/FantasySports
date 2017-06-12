@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Fun Fantasy</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+<ion-card>
+<div padding>
+  <p align="center" padding>Tournaments</p>
+  <ion-segment [(ngModel)]="league" color="secondary">
+    <ion-segment-button value="Fixture">
+    Fixture
+      <!-- <ion-icon name="camera"></ion-icon> -->
+    </ion-segment-button>
+    <ion-segment-button value="Live">
+    Live
+      <!-- <ion-icon name="bookmark"></ion-icon> -->
+    </ion-segment-button>
+     <ion-segment-button value="Results">
+    Results
+      <!-- <ion-icon name="bookmark"></ion-icon> -->
+    </ion-segment-button>
+  </ion-segment>
+</div>
+</ion-card>
+
+
+<div [ngSwitch]="league">
+  <ion-list *ngSwitchCase="'Fixture'">
+  <ion-card>
+    <ion-item (click)="openLeaguePage(p)">  
+      <ion-thumbnail item-start>
+        <img src="assets/img/india.png">
+        <p align="center">IND</p>
+      </ion-thumbnail>      
+      <ion-thumbnail item-end>
+        <img  src="assets/img/pak.png">
+        <p align="center">PAK</p>
+      </ion-thumbnail>
+      <p align="center">VS</p>          
+    </ion-item>
+    </ion-card>
+  <ion-card>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="assets/img/aus.jpg">
+        <p align="center">AUS</p>
+      </ion-thumbnail>      
+      <ion-thumbnail item-end>
+        <img src="assets/img/eng.jpg">
+        <p align="center">ENG</p>
+      </ion-thumbnail> 
+      <p align="center">VS</p>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="assets/img/south.jpg">
+        <p align="center">South Africa</p>
+      </ion-thumbnail>      
+      <ion-thumbnail item-end>
+        <img src="assets/img/westind.jpg">
+        <p align="center">West Indies</p>
+      </ion-thumbnail> 
+      <p align="center">VS</p>
+    </ion-item>
+  </ion-card>
+  </ion-list>  
+</div>
+
+<div [ngSwitch]="league">
+  <ion-list *ngSwitchCase="'Live'">
+    
+  <ion-card>  
+    <ion-item (click)="openPage(p)">
+      <ion-thumbnail item-start>
+        <img src="assets/img/south.jpg">
+        <p align="center">South Africa</p>
+      </ion-thumbnail>      
+      <ion-thumbnail item-end>
+        <img src="assets/img/westind.jpg">
+        <p align="center">West Indies</p>
+      </ion-thumbnail> 
+      <p align="center">VS</p>
+    </ion-item>
+  </ion-card>
+  </ion-list>  
+</div>
+
+</ion-content>
+
+

@@ -1,0 +1,88 @@
+<!--
+  Generated template for the MyAccountPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Account</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+<ion-card >
+<div align="center">
+  	<ion-label >Account Balance</ion-label>  
+	<button ion-button icon-left round outline>
+	  <ion-icon name="logo-usd"></ion-icon>
+	  5000.00
+	</button>
+	<ion-item>
+	<button ion-button icon-left round outline align="right" color="secondary" clear item-start>
+	  <ion-icon name="add-circle" ></ion-icon>
+	  Deposite
+	</button>
+	<button ion-button icon-left round outline align="left" color="dark" clear item-end>
+	  <ion-icon name="md-swap"></ion-icon>
+	  Withdraw
+	</button>	
+	</ion-item>
+</div>
+</ion-card>
+
+<ion-item>
+	<p align="center">Transactions</p>
+  	<ion-segment [(ngModel)]="transaction" color="dark">
+    	<ion-segment-button value="all">
+    	All
+      <!-- <ion-icon name="camera"></ion-icon> -->
+    	</ion-segment-button>
+    	<ion-segment-button value="deposite">
+    	Deposite
+      <!-- <ion-icon name="bookmark"></ion-icon> -->
+    	</ion-segment-button>
+     	<ion-segment-button value="withdrawal">
+    	Withdrawal
+      <!-- <ion-icon name="bookmark"></ion-icon> -->
+    	</ion-segment-button>
+  </ion-segment>
+</ion-item>
+
+
+<div [ngSwitch]="transaction">
+  <ion-list *ngSwitchCase="'all'">
+  <ion-item>
+    <ion-icon name="add-circle" item-start color="secondary"></ion-icon>
+      Amount 100 withdrawn    
+  </ion-item>
+  <ion-item>
+    <ion-icon name="md-swap" item-start color="dark"></ion-icon>
+      Amount 100 deposited    
+  </ion-item>
+</ion-list>
+</div>
+
+<div [ngSwitch]="transaction">
+  <ion-list *ngSwitchCase="'withdrawal'">
+  <ion-item>
+    <ion-icon name="add-circle" item-start color="secondary"></ion-icon>
+      Amount 100 withdrawn    
+  </ion-item>
+</ion-list>
+</div>
+
+<div [ngSwitch]="transaction">
+  <ion-list *ngSwitchCase="'deposite'">
+  <ion-item>
+    <ion-icon name="md-swap" item-start color="dark"></ion-icon>
+      Amount 100 deposited    
+  </ion-item>
+</ion-list>
+</div>
+
+</ion-content>
